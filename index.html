@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherNow | Live Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="topbar">
+            <a class="brand" href="#">
+                <span class="brand-icon">☀</span> WeatherNow
+            </a>
+            <span class="live-label">
+                <span class="live-dot"></span> LIVE WEATHER
+            </span>
+        </header>
+
+        <section class="hero">
+            <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+            <h1>Every day, <span>in focus.</span></h1>
+            <p class="subtitle">
+                Discover the weather wherever you are.
+            </p>
+
+            <form id="searchForm" class="search-bar">
+                <span class="search-icon">⌕</span>
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search a city, e.g. Bengaluru"
+                    aria-label="Search city"
+                    required
+                >
+                <button type="submit" id="searchButton">Search</button>
+            </form>
+
+            <button id="locationButton" class="location-button">
+                ◎ Use my current location
+            </button>
+            <p id="message" class="message" role="status">
+                Search for a city or use your current location.
+            </p>
+        </section>
+
+        <section id="weatherSection" hidden>
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CURRENT CONDITIONS</p>
+                    <h2 id="locationName">Your location</h2>
+                    <p id="localTime" class="muted"></p>
+                </div>
+                <span class="weather-badge">● Live data</span>
+            </div>
+
+            <div class="weather-grid">
+                <article class="weather-card current-card">
+                    <div class="current-top">
+                        <div>
+                            <p id="weatherDescription" class="condition">
+                                Loading weather...
+                            </p>
+                            <div class="temperature">
+                                <span id="temperature">--</span><span>°C</span>
+                            </div>
+                            <p class="feels">
+                                Feels like <strong id="feelsLike">--</strong>°C
+                            </p>
+                        </div>
+                        <div id="weatherIcon" class="weather-icon">🌤️</div>
+                    </div>
+                    <div class="minmax">
+                        <span>↑ <span id="todayHigh">--</span>° High</span>
+                        <span>↓ <span id="todayLow">--</span>° Low</span>
+                    </div>
+                </article>
+
+                <article class="weather-card details-card">
+                    <h3>Weather details</h3>
+                    <div class="detail-row">
+                        <span>💧 Humidity</span>
+                        <strong id="humidity">--%</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>💨 Wind speed</span>
+                        <strong id="wind">-- km/h</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>🌧 Precipitation</span>
+                        <strong id="precipitation">-- mm</strong>
+                    </div>
+                    <div class="detail-row">
+                        <span>☀ Daylight</span>
+                        <strong id="daylight">--</strong>
+                    </div>
+                </article>
+            </div>
+
+            <section class="forecast-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">PLAN AHEAD</p>
+                        <h2>5-day forecast</h2>
+                    </div>
+                </div>
+                <div id="forecast" class="forecast-grid"></div>
+            </section>
+
+            <p class="attribution">
+                Weather data provided by
+                <a href="https://open-meteo.com/" target="_blank"
+                   rel="noopener noreferrer">Open-Meteo</a>.
+            </p>
+        </section>
+
+        <footer>
+            Made for curious minds <span>✦</span> Powered by live weather data
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
