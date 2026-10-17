@@ -56,8 +56,6 @@ weather-app/
 
 ## 👩‍💻 Author
 
-Your Name
+Prajakta Waghamare
 
 ---
-
-⭐ If you find this project useful, consider giving the repository a star.
